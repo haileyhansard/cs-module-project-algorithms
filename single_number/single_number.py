@@ -2,10 +2,24 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
+#Return the single number that is not repeated
+#create new array that will hold list of n that only occurs once
+#loop through original array 
+    #for every element in original array:
+        #if n is in the new array, remove n at its index (pop)
+    #otherwise, add n to the new array (append)
+#return the new array at first index. because there will only be one element that doesn't get popped out of new array, the remaining element will be the single number.
+
 def single_number(arr):
     # Your code here
+    new_arr = []
+    for n in arr:
+        if n in new_arr:
+            new_arr.pop(new_arr.index(n))
+        else:
+            new_arr.append(n)
 
-    pass
+    return new_arr[0]
 
 
 if __name__ == '__main__':
